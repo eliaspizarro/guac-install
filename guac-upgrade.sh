@@ -4,7 +4,7 @@
 if ! [ $(id -u) = 0 ]; then echo "Please run this script as sudo or root"; exit 1 ; fi
 
 # Version number of Guacamole to install
-GUACVERSION="1.5.3"
+GUACVERSION="1.5.4"
 
 # Colors to use for output
 YELLOW='\033[1;33m'
@@ -121,6 +121,9 @@ else
     rm /etc/guacamole/extensions/guacamole-auth-jdbc-*.jar
     cp guacamole-auth-jdbc-${GUACVERSION}/mysql/guacamole-auth-jdbc-mysql-${GUACVERSION}.jar /etc/guacamole/extensions/
 fi
+
+# Fix upgrade 1.5.4
+export LDFLAGS="-lrt"
 
 # Upgrade Guacamole Server
 cd guacamole-server-${GUACVERSION}
