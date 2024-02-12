@@ -124,6 +124,8 @@ fi
 
 # Fix make debian 12 & guacamole 1.5.4
 export LDFLAGS="-lrt"
+wget https://raw.githubusercontent.com/myjimmy/guacamole-server/5dfe5fac1b55836f07607310cd4df90e65099c3a/src/common/surface.c
+mv surface.c guacamole-server-${GUACVERSION}/src/common/surface.c
 
 # Upgrade Guacamole Server
 cd guacamole-server-${GUACVERSION}
