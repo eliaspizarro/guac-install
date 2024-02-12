@@ -122,7 +122,7 @@ else
     cp guacamole-auth-jdbc-${GUACVERSION}/mysql/guacamole-auth-jdbc-mysql-${GUACVERSION}.jar /etc/guacamole/extensions/
 fi
 
-# Fix make debian 12 & guacamole 1.5.4
+# Fix make debian 12 & guacamole 1.5.4 resize
 export LDFLAGS="-lrt"
 wget https://raw.githubusercontent.com/myjimmy/guacamole-server/5dfe5fac1b55836f07607310cd4df90e65099c3a/src/common/surface.c
 mv surface.c guacamole-server-${GUACVERSION}/src/common/surface.c
