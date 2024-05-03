@@ -4,7 +4,7 @@
 if ! [ $(id -u) = 0 ]; then echo "Please run this script as sudo or root"; exit 1 ; fi
 
 # Version number of Guacamole to install
-GUACVERSION="1.5.4"
+GUACVERSION="1.5.5"
 
 # Colors to use for output
 YELLOW='\033[1;33m'
@@ -123,9 +123,9 @@ else
 fi
 
 # Fix make debian 12 & guacamole 1.5.4 resize
-export LDFLAGS="-lrt"
-wget https://raw.githubusercontent.com/myjimmy/guacamole-server/5dfe5fac1b55836f07607310cd4df90e65099c3a/src/common/surface.c
-mv surface.c guacamole-server-${GUACVERSION}/src/common/surface.c
+#export LDFLAGS="-lrt"
+#wget https://raw.githubusercontent.com/myjimmy/guacamole-server/5dfe5fac1b55836f07607310cd4df90e65099c3a/src/common/surface.c
+#mv surface.c guacamole-server-${GUACVERSION}/src/common/surface.c
 
 # Upgrade Guacamole Server
 cd guacamole-server-${GUACVERSION}
